@@ -21,6 +21,7 @@
 #board_list .col4 { width: 40px; }
 #board_list .col5 { width: 180px; }
 #board_list .col6 { width: 40px; }
+#board_list .col7 { width: 20px; }
 #page_num {	text-align: center;	margin: 30px 0 }
 #page_num li { display: inline; }
 /* 게시판 내용보기(board_view.php) */

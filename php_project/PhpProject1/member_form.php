@@ -1,9 +1,9 @@
-
+<!-- 메인에서 회원가입 버튼을 눌러 실질적으로 정보를 입력하여 회원가입하는 페이지 -->
 <!DOCTYPE html>
 <html>
 <head> 
 <meta charset="utf-8">
-<title>PHP 프로그래밍 입문</title>
+<title>음악 공연 홍보 및 예약 웹사이트</title>
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/member.css">
 <script>

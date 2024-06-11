@@ -3,7 +3,7 @@
 
             <ul id="author">
                 <li>예약 관련 문의 메일</li>
-                <li>- 메일 주소 : kbw123@naver.com</li>
+                <li>- 메일 주소 : xownd200225@gmail.com</li>
             </ul>
         </div>
 

@@ -2,7 +2,7 @@
 <html>
 <head> 
 <meta charset="utf-8">
-<title>PHP 프로그래밍 입문</title>
+<title>음악 공연 홍보 및 예약 웹사이트</title>
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/message.css">
 <script>

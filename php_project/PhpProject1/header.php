@@ -47,10 +47,10 @@
         <div id="menu_bar">
             <ul>  
                 <li><a href="index.php">HOME</a></li>
-                <li><a href="message_form.php">쪽지 기능</a></li>                                
-                <li><a href="free_board.php">자유 게시판</a></li>
-                <li><a href="board_form.php">공연 공지 게시판</a></li>
-                <li><a href="musician_board.php">뮤지션 게시판</a></li>                
+                <li><a href="message_form.php">쪽지함</a></li>                                
+                <li><a href="free_board_form.php">자유 게시판</a></li>
+                <li><a href="notice_form.php">공연 공지 게시판</a></li>
+                <li><a href="musician_board_form.php">뮤지션 게시판</a></li>                
             </ul>
         </div>
 

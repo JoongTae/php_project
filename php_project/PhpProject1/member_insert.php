@@ -20,7 +20,7 @@ $hobby_str = implode(", ", $hobbies);
 $con = mysqli_connect("localhost", "user1", "12345", "sample");
 
 $sql = "insert into members(id, pass, name, email, regist_day, level, point, gender, hobby, age, phone, address, self) ";
-$sql .= "values('$id', '$pass', '$name', '$email', '$regist_day', 9, 0, '$gender', '$hobby_str', '$age', '$phone', '$address', '$self')";
+$sql .= "values('$id', '$pass', '$name', '$email', '$regist_day', 2, 0, '$gender', '$hobby_str', '$age', '$phone', '$address', '$self')";
 
 mysqli_query($con, $sql); // $sql 에 저장된 명령 실행
 mysqli_close($con);

@@ -7,25 +7,24 @@
 <link rel="stylesheet" type="text/css" href="./css/board.css">
 <script>
   function check_input() {
-      if (!document.board_form.subject.value)
+      if (!document.musician_form.subject.value)
       {
           alert("제목을 입력하세요!");
-          document.board_form.subject.focus();
+          document.musician_form.subject.focus();
           return;
       }
-      if (!document.board_form.content.value)
+      if (!document.musician_form.content.value)
       {
           alert("내용을 입력하세요!");    
-          document.board_form.content.focus();
+          document.musician_form.content.focus();
           return;
       }
-      document.board_form.submit();
+      document.musician_form.submit();
    }
 </script>
 </head>
 <style>
-
-#main_img_ba{
+    #main_img_ba{
     background-color:black;
     height: 200px;
 }
@@ -37,20 +36,20 @@ img{
 <body> 
 <header>
     <?php include "header.php";?>
-</header> 
- <section>
+</header>  
+<section>
 	<div id="main_img_ba">
-             <img src="song1.png">
+        <img src="song1.png">
              <img src="song2.png">
-              <img src="song3.png">
-        <img src="song4.png">
-        </div>
+             <img src="song3.png">
+             <img src="song4.png">
+    </div>
    	<div id="board_box">
 	    <h3 id="board_title">
 	    		뮤지션 게시판 > 글 쓰기
 		</h3>
-	    <form  name="musician_form" method="post" action="board_insert.php" enctype="multipart/form-data">
-	    	 <ul id="board_form">
+	    <form  name="musician_form" method="post" action="musician_insert.php" enctype="multipart/form-data">
+	    	 <ul id="musician_form">
 				<li>
 					<span class="col1">이름 : </span>
 					<span class="col2"><?=$username?></span>
@@ -73,7 +72,8 @@ img{
 	    	<ul class="buttons">
 				<li><button type="button" onclick="check_input()">완료</button></li>
 				<li><button type="button" onclick="location.href='musician_list.php'">목록</button></li>
-			</ul>
+                                
+                    </ul>
 	    </form>
 	</div> <!-- board_box -->
 </section> 
@@ -82,4 +82,3 @@ img{
 </footer>
 </body>
 </html>
-
