@@ -192,7 +192,10 @@
                                   &nbsp&nbsp&nbsp
                                  <label for="IDOL">아이돌</label>
                                  <input type="checkbox" id="idol" name="hobby[]" value="idol">
-                                </div>  
+                                </div>
+                                    
+                                <div>회원 구분  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 회원<input type="radio" name="level" value = "3" checked>
+                                     &nbsp &nbsp 뮤지션<input type="radio" name="level" value = "3"></div>
                                 
                                     
 			       	<div class="clear"></div>
