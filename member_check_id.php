@@ -1,3 +1,5 @@
+<!-- 회원 가입 시 DB에 저장된 ID와 입력한 ID를 비교하여 중복 여부를 체크하여 알려주는 코드 -->
+
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">

@@ -1,3 +1,5 @@
+<!-- 게시판 안에서 혹은 자유게시판의 아무 곳에서 '목록'버튼을 클릭하면 실행되는 페이지-->
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -9,11 +11,11 @@
 <style>
 #main_img_ba{
     background-color:black;
-    height: 200px;
+    height: 250px;
 }
-img{
+#imgg{
     width: 20%;
-    height: 200px;
+    height: 250px;
 }
 </style>
 <body> 
@@ -22,17 +24,18 @@ img{
 </header>  
 <section>
     <div id="main_img_ba">
-        <img src="song1.png">
-        <img src="song2.png">
-        <img src="song3.png">
-        <img src="song4.png">
+        <img id = "imgg" src = "song1.png">
+        <img id = "imgg" src = "song2.png">
+        <img id = "imgg" src = "song3.png">
+        <img id = "imgg" src = "song4.png">
     </div>
     <div id="board_box">
         <h3>
-            뮤지션 게시판 > 목록보기
+            자유게시판 > 목록보기
         </h3>
         <ul id="board_list">
             <li>
+                
                 <span class="col1">번호</span>
                 <span class="col2">제목</span>
                 <span class="col3">글쓴이</span>
@@ -84,7 +87,7 @@ img{
                 ?>
                 <li>
                     <span class="col1"><?=$number?></span>
-                    <span class="col2"><a href="board_view.php?num=<?=$num?>&page=<?=$page?>"><?=$subject?></a></span>
+                    <span class="col2"><a href="musician_board_view.php?num=<?=$num?>&page=<?=$page?>"><?=$subject?></a></span>
                     <span class="col3"><?=$name?></span>
                     <span class="col4"><?=$file_image?></span>
                     <span class="col5"><?=$regist_day?></span>
@@ -100,7 +103,7 @@ img{
             <?php
             if ($total_page>=2 && $page >= 2) {
                 $new_page = $page-1;
-                echo "<li><a href='board_list.php?page=$new_page'>◀ 이전</a> </li>";
+                echo "<li><a href='musician_board_list.php?page=$new_page'>◀ 이전</a> </li>";
             } else {
                 echo "<li>&nbsp;</li>";
             }
@@ -110,24 +113,24 @@ img{
                 if ($page == $i) { // 현재 페이지 번호 링크 안함
                     echo "<li><b> $i </b></li>";
                 } else {
-                    echo "<li><a href='board_list.php?page=$i'> $i </a><li>";
+                    echo "<li><a href='musician_board_list.php?page=$i'> $i </a><li>";
                 }
             }
             if ($total_page>=2 && $page != $total_page) {
                 $new_page = $page+1;  
-                echo "<li> <a href='board_list.php?page=$new_page'>다음 ▶</a> </li>";
+                echo "<li> <a href='musician_board_list.php?page=$new_page'>다음 ▶</a> </li>";
             } else {
                 echo "<li>&nbsp;</li>";
             }
             ?>
         </ul> <!-- page -->       
         <ul class="buttons">
-            <li><button onclick="location.href='board_list.php'">목록</button></li>
+            <li><button onclick="location.href='musician_board_list.php'">목록</button></lㅈi>
             <li>
                 <?php 
                 if($userid) {
                 ?>
-                <button onclick="location.href='board_form.php'">글쓰기</button>
+                <button onclick="location.href='musician_board_form.php'">글쓰기</button>
                 <?php
                 } else {
                 ?>

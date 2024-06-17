@@ -1,3 +1,5 @@
+<!-- 화면에 출력되는 최상단에 해당하는 코드 -->
+
 ﻿<?php
     session_start();
     if (isset($_SESSION["userid"])) $userid = $_SESSION["userid"];
@@ -48,9 +50,9 @@
             <ul>  
                 <li><a href="index.php">HOME</a></li>
                 <li><a href="message_form.php">쪽지함</a></li>                                
-                <li><a href="free_board_form.php">자유 게시판</a></li>
-                <li><a href="notice_form.php">공연 공지 게시판</a></li>
-                <li><a href="musician_board_form.php">뮤지션 게시판</a></li>                
+                <li><a href="free_board_list.php">자유 게시판</a></li>
+                <li><a href="notice_board_list.php">공연 공지 게시판</a></li>
+                <li><a href="musician_board_list.php">뮤지션 게시판</a></li>                
             </ul>
         </div>
 

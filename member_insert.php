@@ -1,10 +1,12 @@
+<!-- 회원가입 페이지에서 데이터를 입력받으면 입력받은 데이터를 DB에 전달하는 코드 -->
+
 <?php
 $id = $_POST["id"];
 $pass = $_POST["pass"];
 $name = $_POST["name"];
 $email1 = $_POST["email1"];
 $email2 = $_POST["email2"];
-$lever = $_POST["level"];
+$level = $_POST["level"];
 $gender = $_POST["gender"];
 $hobbies = $_POST["hobby"];
 $age = $_POST["age"];

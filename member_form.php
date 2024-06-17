@@ -1,4 +1,5 @@
-<!-- 메인에서 회원가입 버튼을 눌러 실질적으로 정보를 입력하여 회원가입하는 페이지 -->
+<!-- 메인에서 회원가입 버튼을 눌러 실질적으로 정보를 입력할 수 있도록 화면에 보여주는 페이지 -->
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -77,11 +78,11 @@
 <style>
     #main_img_ba{
     background-color:black;
-    height: 200px;
+    height: 250px;
 }
 #imgg{
     width: 20%;
-    height: 200px;
+    height: 250px;
 }
 </style>
 <body> 
@@ -99,7 +100,7 @@
       		<div id="join_box">
           	<form  name="member_form" method="post" action="member_insert.php">
 			    <h2>회원 가입</h2>
-    		    	<div class="form id">
+                                <div class="form id">
 				        <div class="col1">아이디</div>
 				        <div class="col2">
 							<input type="text" name="id">
@@ -109,14 +110,15 @@
 				        		onclick="check_id()"></a>
 				        </div>                 
 			       	</div>
+                            
 			       	<div class="clear"></div>
-
 			       	<div class="form">
 				        <div class="col1">비밀번호</div>
 				        <div class="col2">
 							<input type="password" name="pass">
 				        </div>                 
 			       	</div>
+                                
 			       	<div class="clear"></div>
 			       	<div class="form">
 				        <div class="col1">비밀번호 확인</div>
@@ -124,6 +126,7 @@
 							<input type="password" name="pass_confirm">
 				        </div>                 
 			       	</div>
+                                
 			       	<div class="clear"></div>
 			       	<div class="form">
 				        <div class="col1">이름</div>
@@ -155,6 +158,7 @@
 							<input type="text" name="email1">@<input type="text" name="email2">
 				        </div>                 
 			       	</div>
+                                
                                  <div class="clear"></div>
 			       	<div class="form">
 				        <div class="col1">전화 번호</div>
@@ -162,6 +166,7 @@
 							<input type="text" name="phone">
 				        </div>                 
 			       	</div>
+                                 
                                 <div class="clear"></div>
 			       	<div class="form">
 				        <div class="col1">자기 소개</div>
@@ -169,12 +174,13 @@
 							<input type="text" name="self">
 				        </div>                 
 			       	</div>
-                                <div>성별  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 남성<input type="radio" name="gender" value="남" checked>
-                                     &nbsp &nbsp 여성<input type="radio" name="gender" value="여" ></div>
+                                
+                                <div>성별   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 남성<input type="radio" name="gender" value="남" checked>
+                                     &nbsp &nbsp 여성<input type="radio" name="gender" value="여" ></div> <br>
                                 <div> 
                                     
                                 <div class="hobby">
-                                    관심분야 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                    관심분야 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                                                                 
                                  <label for="JAZZ">재즈</label>
                                  <input type="checkbox" id="jazz" name="hobby[]" value="jazz">
@@ -192,9 +198,9 @@
                                   &nbsp&nbsp&nbsp
                                  <label for="IDOL">아이돌</label>
                                  <input type="checkbox" id="idol" name="hobby[]" value="idol">
-                                </div>
+                                </div> <br>
                                     
-                                <div>회원 구분  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 회원<input type="radio" name="level" value = "3" checked>
+                                <div>회원 구분 &nbsp &nbsp &nbsp &nbsp 회원<input type="radio" name="level" value = "2" checked>
                                      &nbsp &nbsp 뮤지션<input type="radio" name="level" value = "3"></div>
                                 
                                     

@@ -1,3 +1,5 @@
+<!-- 로그인 버튼을 눌렀을 때 ID와 Password를 입력할 수 있게 하는 페이지 -->
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -10,11 +12,11 @@
 <style>
 #main_img_ba{
     background-color:black;
-    height: 200px;
+    height: 250px;
 }
 #imgg{
     width: 20%;
-    height: 200px;
+    height: 250px;
 }
 </style>
 <body> 

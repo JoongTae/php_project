@@ -1,5 +1,3 @@
-<!-- 게시판 안에서 혹은 자유게시판의 아무 곳에서 '목록'버튼을 클릭하면 실행되는 페이지-->
-
 <!DOCTYPE html>
 <html>
 <head> 
@@ -24,18 +22,17 @@
 </header>  
 <section>
     <div id="main_img_ba">
-        <img id = "imgg" src = "song1.png">
-        <img id = "imgg" src = "song2.png">
-        <img id = "imgg" src = "song3.png">
-        <img id = "imgg" src = "song4.png">
+        <img id="imgg" src="song1.png">
+        <img id="imgg" src="song2.png">
+        <img id="imgg" src="song3.png">
+        <img id="imgg" src="song4.png">
     </div>
     <div id="board_box">
         <h3>
-            자유게시판 > 목록보기
+            자유게시판 > 찜한 게시물 목록
         </h3>
         <ul id="board_list">
             <li>
-                
                 <span class="col1">번호</span>
                 <span class="col2">제목</span>
                 <span class="col3">글쓴이</span>
@@ -44,13 +41,25 @@
                 <span class="col6">조회</span>
             </li>
             <?php
+
+            // 로그인 확인
+            if (!isset($_SESSION["userid"])) {
+                echo "<script>
+                        alert('로그인 후 이용해 주세요!');
+                        location.href = 'login_form.php';
+                      </script>";
+                exit;
+            }
+
+            $userid = $_SESSION["userid"];
+
             if (isset($_GET["page"]))
                 $page = $_GET["page"];
             else
                 $page = 1;
 
             $con = mysqli_connect("localhost", "user1", "12345", "sample");
-            $sql = "select * from free_board order by num desc";
+            $sql = "SELECT b.* FROM free_board b JOIN like_board f ON b.num = f.board_num WHERE f.user_id='$userid' ORDER BY b.num DESC";
             $result = mysqli_query($con, $sql);
             $total_record = mysqli_num_rows($result); // 전체 글 수
 
@@ -58,17 +67,16 @@
 
             // 전체 페이지 수($total_page) 계산 
             if ($total_record % $scale == 0)     
-                $total_page = floor($total_record/$scale);      
+                $total_page = floor($total_record / $scale);      
             else
-                $total_page = floor($total_record/$scale) + 1; 
+                $total_page = floor($total_record / $scale) + 1; 
 
             // 표시할 페이지($page)에 따라 $start 계산  
             $start = ($page - 1) * $scale;      
 
             $number = $total_record - $start;
 
-            for ($i=$start; $i<$start+$scale && $i < $total_record; $i++)
-            {
+            for ($i = $start; $i < $start + $scale && $i < $total_record; $i++) {
                 mysqli_data_seek($result, $i);
                 // 가져올 레코드로 위치(포인터) 이동
                 $row = mysqli_fetch_array($result);
@@ -101,24 +109,24 @@
         </ul>
         <ul id="page_num">     
             <?php
-            if ($total_page>=2 && $page >= 2) {
-                $new_page = $page-1;
-                echo "<li><a href='free_board_list.php?page=$new_page'>◀ 이전</a> </li>";
+            if ($total_page >= 2 && $page >= 2) {
+                $new_page = $page - 1;
+                echo "<li><a href='free_board_like_list.php?page=$new_page'>◀ 이전</a> </li>";
             } else {
                 echo "<li>&nbsp;</li>";
             }
 
             // 게시판 목록 하단에 페이지 링크 번호 출력
-            for ($i=1; $i<=$total_page; $i++) {
+            for ($i = 1; $i <= $total_page; $i++) {
                 if ($page == $i) { // 현재 페이지 번호 링크 안함
                     echo "<li><b> $i </b></li>";
                 } else {
-                    echo "<li><a href='free_board_list.php?page=$i'> $i </a><li>";
+                    echo "<li><a href='free_board_like_list.php?page=$i'> $i </a><li>";
                 }
             }
-            if ($total_page>=2 && $page != $total_page) {
-                $new_page = $page+1;  
-                echo "<li> <a href='free_board_list.php?page=$new_page'>다음 ▶</a> </li>";
+            if ($total_page >= 2 && $page != $total_page) {
+                $new_page = $page + 1;  
+                echo "<li> <a href='free_board_like_list.php?page=$new_page'>다음 ▶</a> </li>";
             } else {
                 echo "<li>&nbsp;</li>";
             }

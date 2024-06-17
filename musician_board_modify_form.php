@@ -55,7 +55,7 @@
 	$page = $_GET["page"];
 	
 	$con = mysqli_connect("localhost", "user1", "12345", "sample");
-	$sql = "select * from free_board where num=$num";
+	$sql = "select * from musician_board where num=$num";
 	$result = mysqli_query($con, $sql);
 	$row = mysqli_fetch_array($result);
 	$name       = $row["name"];
@@ -63,7 +63,7 @@
 	$content    = $row["content"];		
 	$file_name  = $row["file_name"];
 ?>
-	    <form  name="free_board_form" method="post" action="free_board_modify.php?num=<?=$num?>&page=<?=$page?>" enctype="multipart/form-data">
+	    <form  name="musician_board_form" method="post" action="musician_board_modify.php?num=<?=$num?>&page=<?=$page?>" enctype="multipart/form-data">
 	    	 <ul id="board_form">
 				<li>
 					<span class="col1">이름 : </span>
@@ -86,7 +86,7 @@
 	    	    </ul>
 	    	<ul class="buttons">
 				<li><button type="button" onclick="check_input()">수정하기</button></li>
-				<li><button type="button" onclick="location.href='free_board_list.php'">목록</button></li>
+				<li><button type="button" onclick="location.href='musician_board_list.php'">목록</button></li>
 			</ul>
 	    </form>
 	</div> <!-- board_box -->

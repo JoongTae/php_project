@@ -1,11 +1,13 @@
+<!-- HOME 버튼을 눌렀을 때 나오는 페이지 -->
+
 <style>
     #main_img_ba{
     background-color:black;
-    height: 200px;
+    height: 250px;
 }
 img{
     width: 20%;
-    height: 200px;
+    height: 250px;
 }
 </style>        
         <div id="main_img_ba">

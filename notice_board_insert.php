@@ -1,3 +1,6 @@
+<!-- 자유 게시판에서 글쓰기 버튼을 누르면 게시판을 작성할 수 있는 페이지-->
+<!-- 실질적으로 데이터를 입력하는 파일-->
+
 <meta charset="utf-8">
 <?php
     session_start();
@@ -74,7 +77,7 @@
 	
 	$con = mysqli_connect("localhost", "user1", "12345", "sample");
 
-	$sql = "insert into board (id, name, subject, content, regist_day, hit,  file_name, file_type, file_copied) ";
+	$sql = "insert into notice_board (id, name, subject, content, regist_day, hit,  file_name, file_type, file_copied) ";
 	$sql .= "values('$userid', '$username', '$subject', '$content', '$regist_day', 0, ";
 	$sql .= "'$upfile_name', '$upfile_type', '$copied_file_name')";
 	mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
@@ -94,7 +97,7 @@
 
 	echo "
 	   <script>
-	    location.href = 'musician_list.php';
+	    location.href = 'notice_board_list.php';
 	   </script>
 	";
 ?>

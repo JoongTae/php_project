@@ -30,14 +30,14 @@
 </script>
 </head>
 <style>
-#main_img_ba{
-    background-color:black;
-    height: 200px;
-}
-img{
-    width: 20%;
-    height: 200px;
-}
+    #main_img_ba{
+        background-color:black;
+        height: 250px;
+    }
+    #imgg{
+        width: 20%;
+        height: 250px;
+    }
 </style>
 <body> 
 <header>
@@ -55,11 +55,11 @@ img{
 	}
 ?>
 <section>
-	<div id="main_img_ba">
-        <img src="song1.png">
-        <img src="song2.png">
-        <img src="song3.png">
-        <img src="song4.png">
+    <div id="main_img_ba">
+        <img id = imgg src="song1.png">
+        <img id = imgg src="song2.png">
+        <img id = imgg src="song3.png">
+        <img id = imgg src="song4.png">
         </div>
     </div>
    	<div id="message_box">
