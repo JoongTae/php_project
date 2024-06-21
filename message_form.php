@@ -35,7 +35,7 @@
         height: 250px;
     }
     #imgg{
-        width: 20%;
+        width: 100%;
         height: 250px;
     }
 </style>
@@ -56,16 +56,12 @@
 ?>
 <section>
     <div id="main_img_ba">
-        <img id = imgg src="song1.png">
-        <img id = imgg src="song2.png">
-        <img id = imgg src="song3.png">
-        <img id = imgg src="song4.png">
-        </div>
+        <img id = imgg src="./img/main_img.jpg">
     </div>
    	<div id="message_box">
 	    <h3 id="write_title">
 	    		쪽지 보내기
-		</h3>
+            </h3>
 		<ul class="top_buttons">
 				<li><span><a href="message_box.php?mode=rv">수신 쪽지함 </a></span></li>
 				<li><span><a href="message_box.php?mode=send">송신 쪽지함</a></span></li>

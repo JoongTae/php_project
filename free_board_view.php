@@ -62,7 +62,6 @@
 			</li>		
 	    </ul>
 	    <ul class="buttons">
-                                <li><button onclick="location.href='free_board_like.php?num=<?=$num?>&page=<?=$page?>'">찜하기</button></li>
 				<li><button onclick="location.href='free_board_list.php?page=<?=$page?>'">목록</button></li>
 				<li><button onclick="location.href='free_board_modify_form.php?num=<?=$num?>&page=<?=$page?>'">수정</button></li>
 				<li><button onclick="location.href='free_board_delete.php?num=<?=$num?>&page=<?=$page?>'">삭제</button></li>

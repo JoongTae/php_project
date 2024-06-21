@@ -11,11 +11,11 @@
 
 #main_img_ba{
     background-color:skyblue;
-    height: 200px;
+    height: 250px;
 }
-#music{
-    width: 20%;
-    height: 200px;
+#imgg{
+    width: 100%;
+    height: 250px;
 }
 </style>
 <body> 
@@ -44,10 +44,7 @@
 ?>
 	<section>
 	<div id="main_img_ba">
-            <img id="music" src="song1.png">
-            <img id="music" src="song2.png">
-            <img id="music" src="song3.png">
-            <img id="music" src="song4.png">
+            <img id = imgg src="./img/main_img.jpg">
         </div>
         <div id="main_content">
       		<div id="join_box">

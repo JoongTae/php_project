@@ -10,6 +10,11 @@
     else $userlevel = "";
     if (isset($_SESSION["userpoint"])) $userpoint = $_SESSION["userpoint"];
     else $userpoint = "";
+    
+    // userlevel에 따라 등급 이름 설정
+    if($userlevel == 1) $levelname = "관리자";
+    elseif($userlevel == 2) $levelname = "회원";
+    elseif($userlevel == 3) $levelname = "뮤지션";
 ?>		
         <div id="top">
             <h3>
@@ -24,13 +29,13 @@
                 <li><a href="login_form.php">로그인</a></li>
 <?php
     } else {
-                $logged = $username."(".$userid.")님[Level:".$userlevel.", Point:".$userpoint."]";
+                $logged = $username."(".$userid.")님 [등급 : ".$levelname.", Point:".$userpoint."]";
 ?>
                 <li><?=$logged?> </li>
                 <li> | </li>
                 <li><a href="logout.php">로그아웃</a> </li>
                 <li> | </li>
-                <li><a href="member_modify_form.php">정보 수정</a></li>
+                <li><a href="member_modify_form.php">회원 정보 수정</a></li>
                 <li> | </li>
                 <li><a href="member_profile.php">프로필</a></li>
 <?php
@@ -48,11 +53,11 @@
         </div>
         <div id="menu_bar">
             <ul>  
-                <li><a href="index.php">HOME</a></li>
+                <li><a href="index.php">메인</a></li>
                 <li><a href="message_form.php">쪽지함</a></li>                                
                 <li><a href="free_board_list.php">자유 게시판</a></li>
-                <li><a href="notice_board_list.php">공연 공지 게시판</a></li>
-                <li><a href="musician_board_list.php">뮤지션 게시판</a></li>                
+                <li><a href="musician_board_list.php">뮤지션 게시판</a></li>
+                <li><a href="notice_board_list.php">공연 공지 게시판</a></li>                
             </ul>
         </div>
 

@@ -6,13 +6,24 @@
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/message.css">
 </head>
+<style>
+#main_img_ba{
+    background-color:black;
+    height: 250px;
+}
+#imgg{
+    width: 100%;
+    height: 250px;
+}
+</style>
+
 <body> 
 <header>
     <?php include "header.php";?>
 </header>  
 <section>
-	<div id="main_img_bar">
-        <img src="./img/main_img.png">
+	<div id="main_img_ba">
+        <img id = imgg src="./img/main_img.jpg">
     </div>
    	<div id="message_box">
 	    <h3 class="title">

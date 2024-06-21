@@ -1,24 +1,21 @@
-<!-- HOME 버튼을 눌렀을 때 나오는 페이지 -->
+<!-- 상단 헤더의 MAIN 버튼을 누르면 보이는 페이지 -->
 
 <style>
     #main_img_ba{
     background-color:black;
     height: 250px;
 }
-img{
-    width: 20%;
+#imgg{
+    width: 100%;
     height: 250px;
 }
 </style>        
         <div id="main_img_ba">
-            <img id="imgg" src="song1.png">
-            <img id="imgg" src="song2.png">
-            <img id="imgg" src="song3.png">
-            <img id="imgg" src="song4.png">
+            <img id = imgg src="./img/main_img.jpg">
         </div>
         <div id="main_content">
             <div id="latest">
-                <h4>최근 게시글(15장)</h4>
+                <h4>최근 게시글</h4>
                 <ul>
 <!-- 최근 게시 글 DB에서 불러오기 -->
 <?php
@@ -45,7 +42,7 @@ img{
 ?>
             </div>
             <div id="point_rank">
-                <h4>포인트 랭킹(15장)</h4>
+                <h4>포인트 랭킹</h4>
                 <ul>
 <!-- 포인트 랭킹 표시하기 -->
 <?php

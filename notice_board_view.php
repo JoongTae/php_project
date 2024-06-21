@@ -14,7 +14,7 @@
 
    	<div id="board_box">
 	    <h3 class="title">
-			자유게시판 > 내용보기
+			공연공지 게시판 > 내용보기
 		</h3>
 <?php
 	$num  = $_GET["num"];

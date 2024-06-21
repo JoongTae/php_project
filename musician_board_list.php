@@ -1,4 +1,4 @@
-<!-- 게시판 안에서 혹은 자유게시판의 아무 곳에서 '목록'버튼을 클릭하면 실행되는 페이지-->
+<!-- 뮤지션 게시판 안에서 혹은 자유게시판의 아무 곳에서 '목록'버튼을 클릭하면 실행되는 페이지-->
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
     height: 250px;
 }
 #imgg{
-    width: 20%;
+    width: 100%;
     height: 250px;
 }
 </style>
@@ -24,14 +24,11 @@
 </header>  
 <section>
     <div id="main_img_ba">
-        <img id = "imgg" src = "song1.png">
-        <img id = "imgg" src = "song2.png">
-        <img id = "imgg" src = "song3.png">
-        <img id = "imgg" src = "song4.png">
+        <img id = imgg src="./img/main_img.jpg">
     </div>
     <div id="board_box">
         <h3>
-            자유게시판 > 목록보기
+            뮤지션게시판 > 목록보기
         </h3>
         <ul id="board_list">
             <li>

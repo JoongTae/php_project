@@ -1,4 +1,4 @@
-<!-- 자유 게시판에서 게시판 수정을 누르면 보이는 페이지-->
+<!-- 뮤지션 게시판에서 게시판 수정을 누르면 보이는 페이지-->
 
 <!DOCTYPE html>
 <html>
@@ -9,19 +9,19 @@
 <link rel="stylesheet" type="text/css" href="./css/board.css">
 <script>
   function check_input() {
-      if (!document.free_board_form.subject.value)
+      if (!document.musician_board_form.subject.value)
       {
           alert("제목을 입력하세요!");
-          document.free_board_form.subject.focus();
+          document.musician_board_form.subject.focus();
           return;
       }
-      if (!document.free_board_form.content.value)
+      if (!document.musician_board_form.content.value)
       {
           alert("내용을 입력하세요!");    
-          document.free_board_form.content.focus();
+          document.musician_board_form.content.focus();
           return;
       }
-      document.free_board_form.submit();
+      document.musician_board_form.submit();
    }
 </script>
 </head>
@@ -31,7 +31,7 @@
     height: 250px;
 }
 #imgg{
-    width: 20%;
+    width: 100%;
     height: 250px;
 }
 </style>
@@ -41,10 +41,7 @@
 </header>  
 <section>
     <div id="main_img_ba">
-        <img id = "imgg" src = "song1.png">
-        <img id = "imgg" src = "song2.png">
-        <img id = "imgg" src = "song3.png">
-        <img id = "imgg" src = "song4.png">
+        <img id = imgg src="./img/main_img.jpg">
     </div>
    	<div id="board_box">
 	    <h3 id="board_title">

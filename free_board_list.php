@@ -14,7 +14,7 @@
     height: 250px;
 }
 #imgg{
-    width: 20%;
+    width: 100%;
     height: 250px;
 }
 </style>
@@ -24,10 +24,7 @@
 </header>  
 <section>
     <div id="main_img_ba">
-        <img id = "imgg" src = "song1.png">
-        <img id = "imgg" src = "song2.png">
-        <img id = "imgg" src = "song3.png">
-        <img id = "imgg" src = "song4.png">
+        <img id = imgg src="./img/main_img.jpg">
     </div>
     <div id="board_box">
         <h3>
@@ -125,7 +122,6 @@
             ?>
         </ul> <!-- page -->       
         <ul class="buttons">
-            <li><button onclick="location.href='free_board_like_list.php'">찜 목록</button></li>
             <li><button onclick="location.href='free_board_list.php'">목록</button></li>
             <li>
                 <?php 

@@ -8,19 +8,19 @@
 <link rel="stylesheet" type="text/css" href="./css/board.css">
 <script>
   function check_input() {
-      if (!document.free_board_form.subject.value)
+      if (!document.notice_board_form.subject.value)
       {
           alert("제목을 입력하세요!");
-          document.free_board_form.subject.focus();
+          document.notice_board_form.subject.focus();
           return;
       }
-      if (!document.free_board_form.content.value)
+      if (!document.notice_board_form.content.value)
       {
           alert("내용을 입력하세요!");    
-          document.free_board_form.content.focus();
+          document.notice_board_form.content.focus();
           return;
       }
-      document.free_board_form.submit();
+      document.notice_board_form.submit();
    }
 </script>
 <style>
@@ -29,7 +29,7 @@
     height: 250px;
 }
 #imgg{
-    width: 20%;
+    width: 100%;
     height: 250px;
 }
 </style>
@@ -38,24 +38,21 @@
 <header>
     <?php include "header.php";?>
     <?php
-if ($userlevel > 2) {
-    echo "<script>alert('접근할 수 없습니다.'); history.go(-1);</script>";
+if ($userlevel != 1) {
+    echo "<script>alert('접근 불가 : 관리자만 작성할 수 있습니다.'); history.go(-1);</script>";
     exit;
 }
 ?>
 </header> 
 <section>
     <div id="main_img_ba">
-        <img id="imgg" src="song1.png">
-        <img id="imgg" src="song2.png">
-        <img id="imgg" src="song3.png">
-        <img id="imgg" src="song4.png">
+        <img id = imgg src="./img/main_img.jpg">
     </div>
     <div id="board_box">
         <h3 id="board_title">
-            자유게시판 > 글 쓰기
+            공연공지 게시판 > 글 쓰기
         </h3>
-        <form name="free_board_form" method="post" action="free_board_insert.php" enctype="multipart/form-data">
+        <form name="notice_board_form" method="post" action="notice_board_insert.php" enctype="multipart/form-data">
              <ul id="board_form">
                 <li>
                     <span class="col1">이름 : </span>
@@ -78,7 +75,7 @@ if ($userlevel > 2) {
                 </ul>
             <ul class="buttons">
                 <li><button type="button" onclick="check_input()">완료</button></li>
-                <li><button type="button" onclick="location.href='free_board_list.php'">목록</button></li>
+                <li><button type="button" onclick="location.href='notice_board_list.php'">목록</button></li>
             </ul>
         </form>
     </div> <!-- board_box -->

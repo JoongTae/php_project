@@ -12,11 +12,11 @@
 
 #main_img_ba{
     background-color:black;
-    height: 200px;
+    height: 250px;
 }
-#music{
-    width: 20%;
-    height: 200px;
+#imgg{
+    width: 100%;
+    height: 250px;
 }
 </style>
 <body> 
@@ -45,10 +45,7 @@
 ?>
     <section>
     <div id="main_img_ba">
-        <img id="music" src="song1.png">
-        <img id="music" src="song2.png">
-        <img id="music" src="song3.png">
-        <img id="music" src="song4.png">
+        <img id = imgg src="./img/main_img.jpg">
     </div>
     <div id="main_content">
             <div id="join_box">
@@ -79,8 +76,7 @@
                     <div class="form email">
                         <div class="col1">이메일</div>
                         <div class="col2">
-                            <input type="text" name="email1" value="<?=$email1?>">@<input 
-                                   type="text" name="email2" value="<?=$email2?>">
+                           <?=$email1?>@<?=$email2?>
                         </div>                 
                     </div>
                     <div class="clear"></div>
@@ -118,11 +114,11 @@
                             <?=$self?>
                         </div>                 
                     </div>
-                    <div id="board_box">
-                        <ul class="buttons">
-                            <li><button type="button" onclick="location.href='free_board_like_list.php'">목록</button></li>
-                        </ul>
-                    </div>
+                    <div class="clear"></div>
+                        <div class="col1">즐겨찾기</div>
+                        <div class="col2">
+                            <li><button type="button" onclick="location.href='notice_board_like_list.php'">목록</button></li>
+                        </div>
             </form>
             </div> <!-- join_box -->
         </div> <!-- main_content -->

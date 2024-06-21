@@ -12,7 +12,7 @@
     height: 250px;
 }
 #imgg{
-    width: 20%;
+    width: 100%;
     height: 250px;
 }
 </style>
@@ -22,10 +22,7 @@
 </header>  
 <section>
     <div id="main_img_ba">
-        <img id = "imgg" src = "song1.png">
-        <img id = "imgg" src = "song2.png">
-        <img id = "imgg" src = "song3.png">
-        <img id = "imgg" src = "song4.png">
+        <img id = imgg src="./img/main_img.jpg">
     </div>
     <div id="message_box">
         <h3>
