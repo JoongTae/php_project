@@ -1,4 +1,5 @@
-<!-- 뮤지션 게시판 안에서 혹은 자유게시판의 아무 곳에서 '목록'버튼을 클릭하면 실행되는 페이지-->
+<!-- 뮤지션 게시판의 아무 곳에서 '목록'버튼을 클릭하면 실행되는 페이지-->
+<!-- DB에 저장되어 있는 뮤지션 게시판의 게시글을 모두 보여주는 페이지 -->
 
 <!DOCTYPE html>
 <html>
@@ -20,11 +21,11 @@
 </style>
 <body> 
 <header>
-    <?php include "header.php";?>
+    <?php include "header.php";?>  <!-- 헤더 부분 포함 -->
 </header>  
 <section>
     <div id="main_img_ba">
-        <img id = imgg src="./img/main_img.jpg">
+        <img id = imgg src="./img/main_img.jpg">  <!-- 메인 이미지 표시 -->
     </div>
     <div id="board_box">
         <h3>
@@ -47,11 +48,11 @@
                 $page = 1;
 
             $con = mysqli_connect("localhost", "user1", "12345", "sample");
-            $sql = "select * from musician_board order by num desc";
+            $sql = "select * from musician_board order by num desc";  // 최신 글 순으로 정렬하여 뮤지션 게시판의 글 가져오기
             $result = mysqli_query($con, $sql);
             $total_record = mysqli_num_rows($result); // 전체 글 수
 
-            $scale = 10;
+            $scale = 10;  // 한 페이지에 표시할 글 수
 
             // 전체 페이지 수($total_page) 계산 
             if ($total_record % $scale == 0)     
@@ -70,16 +71,16 @@
                 // 가져올 레코드로 위치(포인터) 이동
                 $row = mysqli_fetch_array($result);
                 // 하나의 레코드 가져오기
-                $num         = $row["num"];
-                $id          = $row["id"];
-                $name        = $row["name"];
-                $subject     = $row["subject"];
-                $regist_day  = $row["regist_day"];
-                $hit         = $row["hit"];
+                $num         = $row["num"];  // 글 번호
+                $id          = $row["id"];  // 사용자 아이디
+                $name        = $row["name"];  // 사용자 이름
+                $subject     = $row["subject"];  // 글 제목
+                $regist_day  = $row["regist_day"];  // 등록일
+                $hit         = $row["hit"];  // 조회수
                 if ($row["file_name"]) {
-                    $file_image = "<img src='./img/file.gif' alt='첨부파일'>";
+                    $file_image = "<img src='./img/file.gif' alt='첨부파일'>";  // 첨부 파일이 있으면 이미지 표시
                 } else {
-                    $file_image = " ";
+                    $file_image = " ";  // 첨부 파일이 없으면 공백 처리
                 }
                 ?>
                 <li>
@@ -93,14 +94,14 @@
                 <?php
                 $number--;
             }
-            mysqli_close($con);
+            mysqli_close($con);  // 데이터베이스 연결 종료
             ?>
         </ul>
         <ul id="page_num">     
             <?php
             if ($total_page>=2 && $page >= 2) {
                 $new_page = $page-1;
-                echo "<li><a href='musician_board_list.php?page=$new_page'>◀ 이전</a> </li>";
+                echo "<li><a href='musician_board_list.php?page=$new_page'>◀ 이전</a> </li>";  // 이전 페이지 링크
             } else {
                 echo "<li>&nbsp;</li>";
             }
@@ -115,23 +116,23 @@
             }
             if ($total_page>=2 && $page != $total_page) {
                 $new_page = $page+1;  
-                echo "<li> <a href='musician_board_list.php?page=$new_page'>다음 ▶</a> </li>";
+                echo "<li> <a href='musician_board_list.php?page=$new_page'>다음 ▶</a> </li>";  // 다음 페이지 링크
             } else {
                 echo "<li>&nbsp;</li>";
             }
             ?>
         </ul> <!-- page -->       
         <ul class="buttons">
-            <li><button onclick="location.href='musician_board_list.php'">목록</button></lㅈi>
+            <li><button onclick="location.href='musician_board_list.php'">목록</button></li>  <!-- 목록 버튼 -->
             <li>
                 <?php 
                 if($userid) {
                 ?>
-                <button onclick="location.href='musician_board_form.php'">글쓰기</button>
+                <button onclick="location.href='musician_board_form.php'">글쓰기</button>  <!-- 로그인 상태에서 글쓰기 버튼 -->
                 <?php
                 } else {
                 ?>
-                <a href="javascript:alert('로그인 후 이용해 주세요!')"><button>글쓰기</button></a>
+                <a href="javascript:alert('로그인 후 이용해 주세요!')"><button>글쓰기</button></a>  <!-- 비로그인 상태에서는 경고 메시지 출력 -->
                 <?php
                 }
                 ?>
@@ -140,7 +141,7 @@
     </div> <!-- board_box -->
 </section> 
 <footer>
-    <?php include "footer.php";?>
+    <?php include "footer.php";?>  <!-- 푸터 부분 포함 -->
 </footer>
 </body>
 </html>

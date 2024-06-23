@@ -1,3 +1,6 @@
+<!-- '관리자모드'버튼을 누르면 실행되는 페이지 -->
+<!-- 회원과 게시글을 삭제/수정할 수 있는 페이지 -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,15 +9,16 @@
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/admin.css">
 <style>
+/* 회원 리스트와 게시판 리스트의 컬럼 스타일 지정 */
 #member_list .co15, #member_list .col1, #member_list .col2, #member_list .col3,
 #member_list .col4, #member_list .col5, #member_list .col6, #member_list .col7,
 #member_list .col8, #member_list .col9, #member_list .co20, #member_list .co21,
 #member_list .co22, #member_list .co23, #member_list .co24, #board_list .col1, 
 #board_list .col2, #board_list .col3, #board_list .col4, #board_list .col5, 
 #board_list .col6 {
-    text-align: center;
+    text-align: center; /* 텍스트 가운데 정렬 */
 }
-#admin_box { width: 1353px; margin: 0 auto;}
+#admin_box { width: 1353px; margin: 0 auto;} /* 관리자 박스의 스타일 */
 #member_list .co15 { width: 200px; }
 #member_list .col6 { width: 100px; }
 #member_list .col7 { width: 130px; }
@@ -29,7 +33,7 @@
 </head>
 <body>
 <header>
-    <?php include "header.php";?>
+    <?php include "header.php";?> <!-- 헤더 파일 포함 -->
 </header>
 <section>
     <div id="admin_box">
@@ -53,14 +57,14 @@
                 <span class="co24">삭제</span>
             </li>
 <?php
-    $con = mysqli_connect("localhost", "user1", "12345", "sample");
-    $sql = "select * from members order by num desc";
-    $result = mysqli_query($con, $sql);
+    $con = mysqli_connect("localhost", "user1", "12345", "sample"); // 데이터베이스 연결
+    $sql = "select * from members order by num desc"; // 회원 정보를 조회하는 SQL 쿼리
+    $result = mysqli_query($con, $sql); // 쿼리 실행
     $total_record = mysqli_num_rows($result); // 전체 회원 수
 
-    $number = $total_record;
+    $number = $total_record; // 회원 번호 초기화
 
-    while ($row = mysqli_fetch_array($result))
+    while ($row = mysqli_fetch_array($result)) // 각 회원 정보 출력
     {
         $num = $row["num"];
         $id = $row["id"];
@@ -76,7 +80,7 @@
         $self = $row["self"];
 ?>
             <li>
-                <form method="post" action="admin_member_update.php?num=<?=$num?>">
+                <form method="post" action="admin_member_update.php?num=<?=$num?>"> <!-- 회원 정보 수정 폼 -->
                     <span class="col1"><?=$number?></span>
                     <span class="col2"><?=$id?></span>
                     <span class="col3"><?=$name?></span>
@@ -93,7 +97,7 @@
                 </form>
             </li>
 <?php
-        $number--;
+        $number--; // 회원 번호 감소
     }
 ?>
         </ul>
@@ -113,16 +117,16 @@
                 <span class="col5">첨부파일명</span>
                 <span class="col6">작성일</span>
             </li>
-            <form method="post" action="admin_board_delete.php">
+            <form method="post" action="admin_board_delete.php"> <!-- 게시글 삭제 폼 -->
                 
 <?php
-    $sql = "select * from free_board order by num desc";
-    $result = mysqli_query($con, $sql);
+    $sql = "select * from free_board order by num desc"; // 자유게시판 글 조회 쿼리
+    $result = mysqli_query($con, $sql); // 쿼리 실행
     $total_record = mysqli_num_rows($result); // 전체 글의 수
 
-    $number = $total_record;
+    $number = $total_record; // 글 번호 초기화
 
-    while ($row = mysqli_fetch_array($result))
+    while ($row = mysqli_fetch_array($result)) // 각 글 정보 출력
     {
         $num = $row["num"];
         $name = $row["name"];
@@ -140,7 +144,7 @@
                     <span class="col6"><?=$regist_day?></span>
                 </li>
 <?php
-        $number--;
+        $number--; // 글 번호 감소
     }
 ?>
                 <h3 id="member_title">
@@ -155,13 +159,13 @@
                     <span class="col6">작성일</span>
                 </li>
 <?php
-    $sql = "select * from musician_board order by num desc";
-    $result = mysqli_query($con, $sql);
+    $sql = "select * from musician_board order by num desc"; // 뮤지션 게시판 글 조회 쿼리
+    $result = mysqli_query($con, $sql); // 쿼리 실행
     $total_record = mysqli_num_rows($result); // 전체 글의 수
 
-    $number = $total_record;
+    $number = $total_record; // 글 번호 초기화
 
-    while ($row = mysqli_fetch_array($result))
+    while ($row = mysqli_fetch_array($result)) // 각 글 정보 출력
     {
         $num = $row["num"];
         $name = $row["name"];
@@ -179,7 +183,7 @@
                     <span class="col6"><?=$regist_day?></span>
                 </li>
 <?php
-        $number--;
+        $number--; // 글 번호 감소
     }
 ?>
                 <h3 id="member_title">
@@ -194,13 +198,13 @@
                     <span class="col6">작성일</span>
                 </li>
 <?php
-    $sql = "select * from notice_board order by num desc";
-    $result = mysqli_query($con, $sql);
+    $sql = "select * from notice_board order by num desc"; // 공연공지 게시판 글 조회 쿼리
+    $result = mysqli_query($con, $sql); // 쿼리 실행
     $total_record = mysqli_num_rows($result); // 전체 글의 수
 
-    $number = $total_record;
+    $number = $total_record; // 글 번호 초기화
 
-    while ($row = mysqli_fetch_array($result))
+    while ($row = mysqli_fetch_array($result)) // 각 글 정보 출력
     {
         $num = $row["num"];
         $name = $row["name"];
@@ -218,17 +222,17 @@
                     <span class="col6"><?=$regist_day?></span>
                 </li>
 <?php
-        $number--;
+        $number--; // 글 번호 감소
     }
-    mysqli_close($con);
+    mysqli_close($con); // 데이터베이스 연결 종료
 ?>
-                <button type="submit">선택된 글 삭제</button>
+                <button type="submit">선택된 글 삭제</button> <!-- 선택된 글 삭제 버튼 -->
             </form>
         </ul>
     </div> <!-- admin_box -->
 </section>
 <footer>
-    <?php include "footer.php";?>
+    <?php include "footer.php";?> <!-- 푸터 파일 포함 -->
 </footer>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!-- 뮤지션 게시판에서 게시판 수정을 누르면 보이는 페이지-->
+<!-- 뮤지션 게시판에서 수정 버튼을 누르면 실질적으로 데이터가 수정할 수 있도록 입력하는 페이지-->
 
 <!DOCTYPE html>
 <html>
@@ -38,14 +38,14 @@
 <body> 
 <header>
     <?php include "header.php";?>
-</header>  
+</header>
 <section>
     <div id="main_img_ba">
         <img id = imgg src="./img/main_img.jpg">
     </div>
    	<div id="board_box">
 	    <h3 id="board_title">
-                자유게시판 > 글 쓰기
+                뮤지션게시판 > 글 수정
 	    </h3>
 <?php
 	$num  = $_GET["num"];
@@ -82,8 +82,8 @@
 			    </li>
 	    	    </ul>
 	    	<ul class="buttons">
-				<li><button type="button" onclick="check_input()">수정하기</button></li>
-				<li><button type="button" onclick="location.href='musician_board_list.php'">목록</button></li>
+				<li><button type="button" onclick="check_input()">수정하기</button></li> <!-- 수정 버튼 클릭 시 입력값 유효성 검사 후 수정 처리 -->
+				<li><button type="button" onclick="location.href='musician_board_list.php'">목록</button></li> <!-- 목록 버튼 클릭 시 이전 페이지로 돌아감 -->
 			</ul>
 	    </form>
 	</div> <!-- board_box -->

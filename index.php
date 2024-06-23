@@ -1,3 +1,5 @@
+<!-- 메인 버튼을 눌렀을 때 보여주는 페이지 -->
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -8,13 +10,13 @@
 </head>
 <body> 
 	<header>
-    	<?php include "header.php";?>
+    	<?php include "header.php";?> <!-- header.php 파일을 포함하여 헤더를 출력합니다. -->
     </header>
 	<section>
-	    <?php include "main.php";?>
+	    <?php include "main.php";?> <!-- main.php 파일을 포함하여 메인 콘텐츠를 출력합니다. -->
 	</section> 
 	<footer>
-    	<?php include "footer.php";?>
+    	<?php include "footer.php";?> <!-- footer.php 파일을 포함하여 푸터를 출력합니다. -->
     </footer>
 </body>
 </html>

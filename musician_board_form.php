@@ -1,3 +1,5 @@
+<!-- 뮤지션 게시판에서 글쓰기 버튼을 누르면 게시판을 작성할 수 있는 페이지-->
+<!-- 실질적으로 데이터를 입력하는 파일-->
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +39,9 @@
 <body> 
 <header>
     <?php include "header.php";?>
-    <?php
+    
+<!-- 현재 회원 등급이 회원일 경우 경고 메시지를 표시하고 이전 페이지로 되돌아감 -->
+<?php
 if ($userlevel == 2) {
     echo "<script>alert('접근 불가 : 일반 회원은 작성할 수 없습니다.'); history.go(-1);</script>";
     exit;
@@ -46,7 +50,7 @@ if ($userlevel == 2) {
 </header> 
 <section>
     <div id="main_img_ba">
-        <img id = imgg src="./img/main_img.jpg">
+        <img id="imgg" src="./img/main_img.jpg">
     </div>
     <div id="board_box">
         <h3 id="board_title">

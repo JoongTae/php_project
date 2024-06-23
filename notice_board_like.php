@@ -1,3 +1,5 @@
+<!-- 공연공지 게시판 게시글의 '즐겨찾기'버튼을 누르면 DB에 게시글이 전달되어 저장되는 코드 -->
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -11,7 +13,7 @@
 <header>
     <?php include "header.php"; ?>
 </header>
-    <section>
+<section>
 <?php
 
 // 로그인 확인
@@ -29,29 +31,29 @@ $page = $_GET["page"];
 
 $con = mysqli_connect("localhost", "user1", "12345", "sample");
 
-// 게시물이 이미 찜 되었는지 확인
+// 게시물이 이미 즐겨찾기 되었는지 확인
 $sql_check = "SELECT * FROM like_board WHERE user_id='$user_id' AND board_num=$num";
 $result_check = mysqli_query($con, $sql_check);
 
 if (mysqli_num_rows($result_check) == 0) {
-    // 아직 찜하지 않은 경우 like_board에 삽입
+    // 아직 즐겨찾기하지 않은 경우 like_board에 삽입
     $sql_insert = "INSERT INTO like_board (user_id, board_num) VALUES ('$user_id', $num)";
     mysqli_query($con, $sql_insert);
     echo "<script>
-            alert('게시물을 찜했습니다.');
+            alert('게시물을 즐겨찾기했습니다.');
             location.href = 'notice_board_view.php?num=$num&page=$page';
           </script>";
 } else {
-    // 이미 찜한 경우 경고 메시지 출력
+    // 이미 즐겨찾기한 경우 경고 메시지 출력
     echo "<script>
-            alert('이미 찜한 게시물입니다.');
+            alert('이미 즐겨찾기한 게시물입니다.');
             location.href = 'notice_board_view.php?num=$num&page=$page';
           </script>";
 }
 
 mysqli_close($con);
 ?>
-    </section>
+</section>
 <footer>
     <?php include "footer.php"; ?>
 </footer>

@@ -1,8 +1,11 @@
+<!-- 수신/송신 쪽지함을 보여주는 페이지-->
+<!-- GET 방식을 통하여 수신과 송신 부분을 나눔 -->
+
 <!DOCTYPE html>
 <html>
 <head> 
 <meta charset="utf-8">
-<title>PHP 프로그래밍 입문</title>
+<title>음악 공연 홍보 및 예약 웹사이트</title>
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/message.css">
 </head>
@@ -27,6 +30,7 @@
     <div id="message_box">
         <h3>
 <?php
+        // GET 방식으로 전달된 mode에 따라 제목 설정
         if (isset($_GET["page"]))
             $page = $_GET["page"];
         else
@@ -47,6 +51,7 @@
                     <span class="col2">제목</span>
                     <span class="col3">
 <?php                       
+                        // GET 방식으로 전달된 mode에 따라 받은이/보낸이 설정
                         if ($mode=="send")
                             echo "받은이";
                         else
@@ -56,13 +61,16 @@
                     <span class="col4">등록일</span>
                 </li>
 <?php
+    // 데이터베이스 연결 설정
     $con = mysqli_connect("localhost", "user1", "12345", "sample");
 
+    // GET 방식으로 전달된 mode에 따라 쿼리 설정
     if ($mode=="send")
         $sql = "select * from message where send_id='$userid' order by num desc";
     else
         $sql = "select * from message where rv_id='$userid' order by num desc";
 
+    // 쿼리 실행 및 결과 저장
     $result = mysqli_query($con, $sql);
     $total_record = mysqli_num_rows($result); // 전체 글 수
 
@@ -94,6 +102,7 @@
       else
         $msg_id = $row["send_id"];
       
+      // 회원 이름 조회
       $result2 = mysqli_query($con, "select name from members where id='$msg_id'");
       $record = mysqli_fetch_array($result2);
       $msg_name     = $record["name"];     
@@ -112,6 +121,7 @@
             </ul>
             <ul id="page_num">    
 <?php
+    // 이전 페이지 링크 설정
     if ($total_page>=2 && $page >= 2)  
     {
         $new_page = $page-1;
@@ -120,7 +130,7 @@
     else 
         echo "<li>&nbsp;</li>";
 
-    // 게시판 목록 하단에 페이지 링크 번호 출력
+    // 페이지 링크 번호 출력
     for ($i=1; $i<=$total_page; $i++)
     {
         if ($page == $i)     // 현재 페이지 번호 링크 안함
@@ -129,9 +139,11 @@
         }
         else
         {
-            echo "<li> <a href='message_box.php?mode=$mode&page=$i'> $i </a> </li>"; // 여기 수정
+            echo "<li> <a href='message_box.php?mode=$mode&page=$i'> $i </a> </li>"; // 페이지 링크
         }
     }
+
+    // 다음 페이지 링크 설정
     if ($total_page>=2 && $page != $total_page)      
     {
         $new_page = $page+1;    
@@ -140,7 +152,7 @@
     else 
         echo "<li>&nbsp;</li>";
 ?>
-            </ul> <!-- page -->        
+            </ul> <!-- page_num 닫기 -->        
             <ul class="buttons">
                 <li><button onclick="location.href='message_box.php?mode=rv'">수신 쪽지함</button></li>
                 <li><button onclick="location.href='message_box.php?mode=send'">송신 쪽지함</button></li>

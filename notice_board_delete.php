@@ -1,3 +1,5 @@
+<!-- 공연공지 게시판 게시글에서 '삭제'버튼을 누르면 DB에 저장된 게시글을 삭제하는 코드 -->
+
 <header>
     <?php include "header.php";?>
 </header>
@@ -8,7 +10,7 @@ $page   = $_GET["page"]; // 삭제 후 돌아갈 페이지 번호
 
 $con = mysqli_connect("localhost", "user1", "12345", "sample");
 
-$login_id = $_SESSION['userid'];
+$login_id = $_SESSION['userid']; // 현재 로그인한 사용자 아이디
 
 
 // Step 1: 데이터베이스에서 게시글 정보 조회
@@ -29,8 +31,8 @@ if (!$row) {
 
 $board_writer = $row['id']; // 게시글 작성자 아이디 가져오기
 
-// Step 2: 게시글 작성자와 로그인한 사용자 비교, 혹은 관리자인지 확인
-if ($login_id !== $board_writer || $userlevel != 1) {
+// Step 2: 게시글 작성자와 로그인한 사용자 비교
+if ($login_id !== $board_writer) {
     mysqli_close($con);
     echo "
         <script>

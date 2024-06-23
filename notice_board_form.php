@@ -1,3 +1,5 @@
+<!-- 공연공지 게시판에서 글쓰기 버튼을 누르면 게시판을 작성할 수 있는 페이지-->
+<!-- 실질적으로 데이터를 입력하는 파일-->
 
 <!DOCTYPE html>
 <html>
@@ -37,6 +39,7 @@
 <body> 
 <header>
     <?php include "header.php";?>
+    <!-- 현재 회원 등급이 관리자가 아닐 경우 경고 메시지를 표시하고 이전 페이지로 되돌아감 -->
     <?php
 if ($userlevel != 1) {
     echo "<script>alert('접근 불가 : 관리자만 작성할 수 있습니다.'); history.go(-1);</script>";
