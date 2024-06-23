@@ -64,6 +64,7 @@
 		</li>		
 	    </ul>
 	    <ul class="buttons">
+                <li><button onclick="location.href='notice_board_like.php?num=<?=$num?>&page=<?=$page?>'">즐겨찾기</button></li>
                 <li><button onclick="location.href='notice_board_list.php?page=<?=$page?>'">목록</button></li> <!-- 목록 버튼 클릭 시 리스트 페이지로 이동 -->
 		<li><button onclick="location.href='notice_board_modify_form.php?num=<?=$num?>&page=<?=$page?>'">수정</button></li> <!-- 수정 버튼 클릭 시 수정 폼 페이지로 이동 -->
 		<li><button onclick="location.href='notice_board_delete.php?num=<?=$num?>&page=<?=$page?>'">삭제</button></li> <!-- 삭제 버튼 클릭 시 삭제 처리 페이지로 이동 -->
