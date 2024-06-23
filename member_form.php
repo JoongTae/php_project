@@ -190,6 +190,7 @@
             </div> <!-- join_box -->
         </div> <!-- main_content -->
     </section> 
+    <br><br><br><br><br><br><br><br>
     <footer>
         <?php include "footer.php"; ?>
     </footer>
