@@ -88,6 +88,7 @@
             <div id="join_box">
                 <form name="member_form" method="post" action="member_insert.php">
                     <h2>회원 가입</h2>
+                    <br>
                     <div class="form">
                         <div class="col1">아이디</div>
                         <div class="col2">
@@ -190,7 +191,7 @@
             </div> <!-- join_box -->
         </div> <!-- main_content -->
     </section> 
-    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <footer>
         <?php include "footer.php"; ?>
     </footer>
