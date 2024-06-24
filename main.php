@@ -11,13 +11,32 @@
         width: 100%;
         height: 250px;
     }
+.main-container {
+        display : flex;
+        align-tiems: center;  /* 요소물을 세로 중앙 정렬 */
+}
+
+    .video-container {
+        margin-left: 1000px;  /*영상과 제목 사이 여백 */
+    }
+    .video-container iframe {
+        width: 340px;   /* 영상 너비 설정 */
+        height: 240px;  /* 영상 높이 설정 */
+    }
 </style>        
 <div id="main_img_ba">
     <img id="imgg" src="./img/main_img.jpg">
 </div>
 <div id="main_content">
+    <div class="main-container">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/7maJOI3QMu0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
     <div id="latest">
         <h4>최근 게시글</h4>
+        
+
         <ul>
             <!-- 최근 게시 글 DB에서 불러오기 -->
             <?php

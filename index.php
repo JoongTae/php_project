@@ -14,7 +14,7 @@
     </header>
 	<section>
 	    <?php include "main.php";?> <!-- main.php 파일을 포함하여 메인 콘텐츠를 출력합니다. -->
-	</section> 
+	</section>
 	<footer>
     	<?php include "footer.php";?> <!-- footer.php 파일을 포함하여 푸터를 출력합니다. -->
     </footer>
